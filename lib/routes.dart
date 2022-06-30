@@ -5,7 +5,7 @@ import 'logic/cubit/cubit/phone_auth_cubit.dart';
 import 'constants/strings.dart';
 import 'presentation/screens/otp_screen.dart';
 import 'presentation/screens/phone_nimber_screen.dart';
-import 'presentation/screens/third_screen.dart';
+import 'presentation/screens/maps_screen.dart';
 
 class AppRoutes {
   PhoneAuthCubit? _phoneAuthCubit;
@@ -32,7 +32,7 @@ class AppRoutes {
                   ),
                 ));
 
-      case thirdScreen:
+      case mapsScreen:
         final String phoneNumber = settings.arguments as String;
 
         return MaterialPageRoute(

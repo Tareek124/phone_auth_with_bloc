@@ -33,6 +33,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
+  geolocator: ^9.0.0
+  google_maps_flutter: ^2.1.8
   otp_text_field: ^1.1.3
   pin_code_fields: ^7.4.0
 

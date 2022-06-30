@@ -106,6 +106,8 @@ class ScreensWidgets {
           } else {
             if (value.length <= 10) {
               return "Phone Number Is Too Short";
+            } else if (value.length > 11) {
+              return "Number shouldn't be bigger than usual!!";
             }
             return null;
           }
@@ -124,7 +126,7 @@ class ScreensWidgets {
   _showSnackBar(BuildContext context, String errorMsg) {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: Text(errorMsg),
-      duration: const Duration(seconds: 100),
+      duration: const Duration(seconds: 3),
       action: SnackBarAction(
         label: 'Error',
         onPressed: () {
@@ -166,12 +168,9 @@ class ScreensWidgets {
                       });
                 } else if (state is PhoneNumberSubmittedState) {
                   Navigator.pop(context);
-                  if (_key.currentState!.validate()) {
-                    Navigator.pushNamed(context, phoneOTP,
-                        arguments: _controller.text);
-                  } else {
-                    print("Not Valid");
-                  }
+
+                  Navigator.pushNamed(context, phoneOTP,
+                      arguments: _controller.text);
                 }
               },
               child: const SizedBox(),
@@ -188,8 +187,12 @@ class ScreensWidgets {
               ),
               child: TextButton(
                 onPressed: () async {
-                  BlocProvider.of<PhoneAuthCubit>(context)
-                      .submitPhoneNumber(phoneNumber: _controller.text);
+                  if (_key.currentState!.validate()) {
+                    BlocProvider.of<PhoneAuthCubit>(context)
+                        .submitPhoneNumber(phoneNumber: _controller.text);
+                  } else {
+                    print("Not Valid");
+                  }
                 },
                 child: const Text(
                   "Verify",
@@ -262,7 +265,7 @@ class ScreensWidgets {
                   _showSnackBar(context, state.error!);
                 } else if (state is OTPVerifiedState) {
                   Navigator.pop(context);
-                  Navigator.pushReplacementNamed(context, thirdScreen,
+                  Navigator.pushReplacementNamed(context, mapsScreen,
                       arguments: _controller.text);
                 }
               },
