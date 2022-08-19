@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "425282737863",
+    "project_id": "phone-authentication-e5063",
+    "storage_bucket": "phone-authentication-e5063.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:425282737863:android:515c420d74a86bcd5410e2",
+        "android_client_info": {
+          "package_name": "com.example.phone_auth_with_bloc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "425282737863-64do9j2q6sr1b51dpm8tlkorjb5dhhdl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBf_zYZF6M1f_yd0uWTCzHPcxi0U5zuTOc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "425282737863-64do9j2q6sr1b51dpm8tlkorjb5dhhdl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
